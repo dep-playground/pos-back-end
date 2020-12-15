@@ -23,7 +23,6 @@ public class ItemServlet extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
 
         String code = req.getParameter("code");
         if(code ==null || !code.matches("I\\d{3}")){
@@ -70,7 +69,6 @@ public class ItemServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
 
         String code = req.getParameter("code");
         if( code ==null || !code.matches("I\\d{3}")){
@@ -104,14 +102,11 @@ public class ItemServlet extends HttpServlet {
 
     @Override
     protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-//        resp.addHeader("Access-Control-Allow-Headers", "Content-Type");
-//        resp.addHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        resp.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
 
         BasicDataSource cp = (BasicDataSource) getServletContext().getAttribute("cp");
 
@@ -155,8 +150,6 @@ public class ItemServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         BasicDataSource cp = (BasicDataSource) getServletContext().getAttribute("cp");
-
-//        resp.addHeader("Access-Control-Allow-Origin", "http://localhost:3000");
         resp.setContentType("application/json");
         try (PrintWriter out = resp.getWriter()) {
 
